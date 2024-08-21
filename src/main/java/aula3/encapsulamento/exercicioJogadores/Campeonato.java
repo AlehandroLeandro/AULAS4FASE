@@ -9,7 +9,7 @@ public class Campeonato {
         Time t = new Time();
         t.cadastrarTime(nome);
         times.add(t);
-        
+
     }
 
     public void addJogador(String nomeTime, String nomeJogador, int camisa, int gols){
