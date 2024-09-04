@@ -54,7 +54,4 @@ public class Time {
         return jogadores;
     }
 
-    public void setJogadores(ArrayList<Jogador> jogadores) {
-        this.jogadores = jogadores;
-    }
 }

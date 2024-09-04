@@ -43,7 +43,7 @@ public class Campeonato {
 
         Time timeMaisGols = times.get(0);
         for(Time t : times){
-            if(t.golsTime() > timeMaisGols().golsTime())
+            if(t.golsTime() > timeMaisGols.golsTime())
                 timeMaisGols = t;
         }
         return timeMaisGols;
@@ -61,7 +61,4 @@ public class Campeonato {
         return times;
     }
 
-    public void setTimes(ArrayList<Time> times) {
-        this.times = times;
-    }
 }

@@ -1,15 +1,11 @@
-package aula3.encapsulamento.exercicioJogadores;
-
-import aula3.encapsulamento.exercicioJogadores.Campeonato;
-import aula3.encapsulamento.exercicioJogadores.Jogador;
-import aula3.encapsulamento.exercicioJogadores.Time;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+package JogoTeste;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CampeonatoTest {
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
+class CampeonatoTest {
     Campeonato champ = new Campeonato();
 
     @BeforeEach
@@ -18,18 +14,18 @@ class CampeonatoTest {
 
         //ADICIONA 1º TIME DEFAULT
         champ.cadastrarTime("Time 1");
-        champ.addJogador("Time 1", "J1", 5, 2);
-        champ.addJogador("Time 1", "J2", 6, 2);
-        champ.addJogador("Time 1", "J3", 7, 2);
-        champ.addJogador("Time 1", "J4", 8, 2);
+        champ.addJogador("Time 1", "J1", 1, 2);
+        champ.addJogador("Time 1", "J2", 2, 2);
+        champ.addJogador("Time 1", "J3", 3, 2);
+        champ.addJogador("Time 1", "J4", 4, 2);
 
 
         //ADICIONA 2º TIME DEFAULT
         champ.cadastrarTime("Time 2");
-        champ.addJogador("Time 2", "J5", 1, 1);
-        champ.addJogador("Time 2", "J6", 2, 1);
-        champ.addJogador("Time 2", "J7", 3, 4);
-        champ.addJogador("Time 2", "J8", 4, 1);
+        champ.addJogador("Time 2", "J5", 5, 1);
+        champ.addJogador("Time 2", "J6", 6, 1);
+        champ.addJogador("Time 2", "J7", 7, 4);
+        champ.addJogador("Time 2", "J8", 8, 1);
     }
 
 
@@ -48,21 +44,21 @@ class CampeonatoTest {
 
     @Test
     void artiCampeonatoTest() {
-        Jogador j = champ.artilheiroCampeonato();
+        Jogador j = champ.artiCampeonato();
         assertEquals("J7", j.getNome());
     }
 
     @Test
     void artiCampeonatoSemTimeCadTest() {
         champ.getTimes().clear();
-        Jogador j = champ.artilheiroCampeonato();
+        Jogador j = champ.artiCampeonato();
         assertNull(j.getNome());
     }
 
     @Test
     void listaJogadoresTimeTest() {
         String s = champ.listaJogadoresTime("Time 2");
-        String esperado = "Jogadores do time Time 2\n\n";
+        String esperado = "*** Jogadores do time Time 2 ***\n\n";
         esperado += "J5(Camisa 5): 1 gols\n";
         esperado += "J6(Camisa 6): 1 gols\n";
         esperado += "J7(Camisa 7): 4 gols\n";
@@ -83,4 +79,5 @@ class CampeonatoTest {
         assertEquals(4, champ.getTimes().get(0).getJogadores().size());
         assertEquals(4, champ.getTimes().get(1).getJogadores().size());
     }
+
 }
