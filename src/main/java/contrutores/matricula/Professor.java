@@ -1,4 +1,4 @@
-package construtores.matricula;
+package contrutores.matricula;
 
 public class Professor {
     private String nome;

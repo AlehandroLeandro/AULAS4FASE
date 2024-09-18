@@ -1,4 +1,4 @@
-package construtores.matricula;
+package contrutores.matricula;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;

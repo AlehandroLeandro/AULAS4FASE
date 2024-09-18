@@ -1,4 +1,4 @@
-package construtores.matricula;
+package contrutores.matricula;
 
 public class Disciplina {
     private String nome;
