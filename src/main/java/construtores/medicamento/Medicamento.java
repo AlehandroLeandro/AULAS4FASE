@@ -7,19 +7,15 @@ import java.util.List;
 public class Medicamento {
 
     private String nome;
-    private String  administracao;
-    private List<String> listaIndicacoes = new ArrayList<>();
-
-
-    public Medicamento() {
-    }
-
-    public Medicamento(String nome, String administracao, List<String> listaIndicacoes) {
+    private String administracao;
+    private ArrayList<String> indicacoes = new ArrayList<String>();
+//contrutor
+    public Medicamento(String nome, String administracao, ArrayList<String> indicacoes) {
         this.nome = nome;
         this.administracao = administracao;
-        this.listaIndicacoes = listaIndicacoes;
+        this.indicacoes = indicacoes;
     }
-
+//gets e sets
     public String getNome() {
         return nome;
     }
@@ -36,12 +32,16 @@ public class Medicamento {
         this.administracao = administracao;
     }
 
-    public List<String> getListaIndicacoes() {
-        return listaIndicacoes;
+    public ArrayList<String> getIndicacoes() {
+        return indicacoes;
     }
 
-    public void setListaIndicacoes(List<String> listaIndicacoes) {
-        this.listaIndicacoes = listaIndicacoes;
+    public void setIndicacoes(ArrayList<String> indicacoes) {
+        this.indicacoes = indicacoes;
     }
-
+//toString padrao
+    @Override
+    public String toString() {
+        return getNome() + "\n";
+    }
 }

@@ -4,34 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Prescricao {
-    private List<Medicamento> medicamentos = new ArrayList<>();
-    private List<Pessoa> pessoas = new ArrayList<>();
 
-    public void cadMedicamento(Medicamento medicamento){
-        medicamentos.add(medicamento);
+    private Pessoa pessoa;
+    private Medicamento medicamento;
+
+//contrutor aqui tbm
+    public Prescricao(Pessoa pessoa, Medicamento medicamento) {
+        this.pessoa = pessoa;
+        this.medicamento = medicamento;
+    }
+//gets e sets denovo grazadeus
+    public Pessoa getPessoa() {
+        return pessoa;
     }
 
-    public void cadPessoa(Pessoa pessoa) {
-        pessoas.add(pessoa);
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
     }
 
-    public void prescMed(Pessoa pessoa, Medicamento medicamento){
-        if(medicamento.getListaIndicacoes().contains(pessoa.getSintoma())){
-           pessoa.addMedicamento(medicamento);
-        }
+    public Medicamento getMedicamento() {
+        return medicamento;
     }
 
-    public void listMediPrescPessoa(){
-        for(Pessoa pessoa : pessoas){
-            System.out.println("Pessoa: " + pessoa.getNome() + ", Sintoma: " + pessoa.getSintoma());
-            if (pessoa.getListaMed().isEmpty()){
-                System.out.println("Nenhum medicamento prescrito.");
-            } else{
-                System.out.println("Medicamentos prescritos: ");
-                for(Medicamento medicamento : pessoa.getListaMed()){
-                    System.out.println("- " + medicamento.getNome() + "(Administração: " + medicamento.getAdministracao() + ")");
-                }
-            }
-        }
+    public void setMedicamento(Medicamento medicamento) {
+        this.medicamento = medicamento;
     }
+//de sempre
+    @Override
+    public String toString() {
+        return pessoa + " - " + medicamento;
+    }
+
 }
