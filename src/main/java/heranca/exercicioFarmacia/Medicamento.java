@@ -4,20 +4,26 @@ import java.util.Random;
 
 public class Medicamento extends Produto {
 
-    private boolean receitaObrigatoria;
-    Random rd = new Random();
+    private boolean retemReceita;
 
-
-    public Medicamento() {
-        super();
-        this.receitaObrigatoria = rd.nextBoolean();
-    }
-    public Medicamento(String nome, int estoque, double valor, boolean receitaObrigatoria) {
-        // Chama o construtor da classe Produto para inicializar nome, estoque e valor
-        super(nome, estoque, valor);
-        this.receitaObrigatoria = receitaObrigatoria; // Inicializa receita obrigatória
+    public Medicamento(String nome, int estoque, double vl, boolean receita) {
+        super(nome, estoque, vl);
+        this.retemReceita = receita;
     }
 
+    @Override
+    public boolean vender(Cliente c, int qtd) {
+        if (getEstoque() >= qtd) {
+            return super.vender(c, qtd);
+        }
+        return false;
+    }
 
+    public boolean isRetemReceita() {
+        return retemReceita;
+    }
 
+    public void setRetemReceita(boolean retemReceita) {
+        this.retemReceita = retemReceita;
+    }
 }
