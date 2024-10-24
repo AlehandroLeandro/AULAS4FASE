@@ -5,8 +5,8 @@ public class ContaCorrente extends Conta{
     //- Conta corrente: permite realizar saque apenas se tiver saldo (verificar também a transferência).
 
 
-    public ContaCorrente(int conta, int agencia, double saldo) {
-        super(conta, agencia, saldo);
+    public ContaCorrente(int conta, int agencia) {
+        super(conta, agencia);
     }
 
     @Override

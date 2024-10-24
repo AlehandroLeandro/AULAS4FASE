@@ -9,8 +9,8 @@ public class ContaUiversitaria extends ContaCorrente{
 
     final double vlMax = 2000;
 
-    public ContaUiversitaria(int conta, int agencia, double saldo, double vlMax){
-        super(conta, agencia, saldo);
+    public ContaUiversitaria(int conta, int agencia, double vlMax){
+        super(conta, agencia);
     }
 
     @Override

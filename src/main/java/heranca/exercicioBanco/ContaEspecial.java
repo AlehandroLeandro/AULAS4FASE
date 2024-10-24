@@ -7,8 +7,8 @@ public class ContaEspecial extends ContaCorrente{
 */
     private double limite;
 
-    public ContaEspecial(int conta, int agencia, double saldo, double limite){
-        super(conta, agencia, saldo);
+    public ContaEspecial(int conta, int agencia, double limite){
+        super(conta, agencia);
         this.limite = limite;
     }
 
