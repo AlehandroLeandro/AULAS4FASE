@@ -26,4 +26,12 @@ public class ContaEspecial extends ContaCorrente{
             return super.transferencia(agencia, conta, valor);
         } return false;
     }
+
+    public double getLimite() {
+        return limite;
+    }
+
+    public void setLimite(double limite) {
+        this.limite = limite;
+    }
 }

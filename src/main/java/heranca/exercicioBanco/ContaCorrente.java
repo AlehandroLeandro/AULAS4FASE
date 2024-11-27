@@ -19,7 +19,7 @@ public class ContaCorrente extends Conta{
 
     @Override
     public boolean saque(double valor){
-        if(getSaldo() > valor){
+        if(getSaldo() >= valor){
             return super.saque(valor);
         }
         return false;
